@@ -13,6 +13,7 @@ export default {
         format: 'iife',
         name: 'app',
         file: '../public/bundle.js',
+        external: ['moment'],
     },
     plugins: [
         svelte({
