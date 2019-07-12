@@ -13,11 +13,13 @@ const NoteSchema = new Schema(
 );
 
 // this is used to remove both _id and _v, returning id instead
-schema.set('toJSON', {
-    transform: (doc, ret, options) => {
+NoteSchema.set('toJSON', {
+    virtuals: true,
+    versionKey: false,
+    transform: (doc, ret) => {
         ret.id = ret._id;
         delete ret._id;
-        delete ret.__v;
+        return ret;
     },
 });
 
