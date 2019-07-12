@@ -6,6 +6,9 @@
   export let id = "";
   export let title = "";
   export let content = "";
+  export let createdAt = "";
+  export let updatedAt = "";
+  export let isDeleted = false;
 
   function deletenote() {
     dispatch("deletenote", { id });
